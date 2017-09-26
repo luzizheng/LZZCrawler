@@ -1,0 +1,49 @@
+PODS:
+  - ACFloatingTextfield-Objc (1.5)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - DownloadButton (0.1.0)
+  - EDColor (1.0.1)
+  - IQKeyboardManager (5.0.2)
+  - Ono (1.2.2)
+  - SCLAlertView-Objective-C (1.1.2)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+
+DEPENDENCIES:
+  - ACFloatingTextfield-Objc (~> 1.5)
+  - AFNetworking
+  - DownloadButton
+  - EDColor
+  - IQKeyboardManager
+  - Ono
+  - SCLAlertView-Objective-C
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  ACFloatingTextfield-Objc: 055fdf543ac1de65cf3d6c91f270a0a188612e8b
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DownloadButton: 49a21a89e0d7d1b42d9134f79aaa40e727cd57c3
+  EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
+  IQKeyboardManager: 5ab84749f20f682f784160c2c63bef4f19d10d26
+  Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
+  SCLAlertView-Objective-C: 0e54351fa4f98a5c7c6ad3727e6dbb46784534e5
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+
+PODFILE CHECKSUM: d8b773b9c819aba6d3659fb1ad032c6d3547da2e
+
+COCOAPODS: 1.2.1
