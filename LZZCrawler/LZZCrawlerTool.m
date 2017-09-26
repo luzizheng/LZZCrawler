@@ -60,7 +60,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(LZZTaskBox)
         ONOXMLDocument *document = [ONOXMLDocument HTMLDocumentWithData:responseObject error:&error];
         [document enumerateElementsWithXPath:xPath usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
             [tmpBox addObject:element.attributes];
-
         }];
         
         if (completion) {

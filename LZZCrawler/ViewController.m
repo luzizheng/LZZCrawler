@@ -129,6 +129,7 @@
         CGFloat list_maxH = self.commitBtn.frame.origin.y - tf_bottom - 20.0;
         CGFloat list_currentH = ((CGFloat)[StoreData historyUrls].count) * LZZHistoryListCellHeight;
         [self.historyListView setFrame:CGRectMake(self.textField.frame.origin.x, tf_bottom, self.textField.frame.size.width,MIN(list_maxH, list_currentH))];
+        [self.historyListView reloadData];
     }
     
     self.historyListView.hidden = !flag;
@@ -164,6 +165,7 @@
                 self.commitBtn.state = kPKDownloadButtonState_StartDownload;
                 if (successed) {
                     [alert showSuccess:@"Successed" subTitle:@"Grab done" closeButtonTitle:@"done" duration:LZZAlertStayDuration];
+                    NSLog(@"resData:%@",[FormatToString formatItem:resData]);
                 }else{
                     [alert showError:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"close" duration:LZZAlertStayDuration];
                 }
