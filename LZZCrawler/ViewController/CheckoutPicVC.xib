@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutPicVC">
+            <connections>
+                <outlet property="scrollView" destination="XzW-mO-kjq" id="8Tg-Fg-fXB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FS1-Oh-KEG">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzW-mO-kjq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XzW-mO-kjq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4oR-lv-NMd"/>
+                <constraint firstItem="FS1-Oh-KEG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QMn-Hh-FF3"/>
+                <constraint firstAttribute="trailing" secondItem="FS1-Oh-KEG" secondAttribute="trailing" id="VWp-Ec-7nK"/>
+                <constraint firstItem="XzW-mO-kjq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WxT-M1-dNQ"/>
+                <constraint firstAttribute="bottom" secondItem="XzW-mO-kjq" secondAttribute="bottom" id="rm2-Ta-oxd"/>
+                <constraint firstAttribute="trailing" secondItem="XzW-mO-kjq" secondAttribute="trailing" id="thb-G0-dDZ"/>
+                <constraint firstAttribute="bottom" secondItem="FS1-Oh-KEG" secondAttribute="bottom" id="tnX-V7-dBA"/>
+                <constraint firstItem="FS1-Oh-KEG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yRY-HN-oaa"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="bgimg.jpg" width="1080" height="1920"/>
+    </resources>
+</document>

@@ -20,27 +20,42 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self globleConfig];
+    [self pageEntrance];
+    return YES;
+}
+-(void)globleConfig
+{
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
+    [[UINavigationBar appearance] setTranslucent:YES];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor clearColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithWhite:0.93 alpha:1.0]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    
+}
+
+
+-(void)pageEntrance
+{
     UIViewController * vc = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"launchscreen"];
     UIWindow * window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     window.rootViewController = vc;
     self.window = window;
     [window makeKeyAndVisible];
-    
     UILabel * titleLabel = [vc.view viewWithTag:11];
     UILabel * copyRightLabel = [vc.view viewWithTag:22];
-    
-    
     ViewController * mainVC = [[ViewController alloc] init];
     mainVC.titleLabel = [titleLabel copyView];
     mainVC.copyrightLabel = [copyRightLabel copyView];
     
-    [vc presentViewController:mainVC animated:NO completion:nil];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     
-    return YES;
+    [vc presentViewController:nav animated:NO completion:nil];
 }
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

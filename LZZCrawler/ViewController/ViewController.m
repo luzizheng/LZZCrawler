@@ -10,6 +10,8 @@
 #import "LZZCrawlerTool.h"
 #import <ACFloatingTextfield-Objc/ACFloatingTextField.h>
 #import "LZZButton.h"
+#import "NSString+smartUrl.h"
+#import "CheckoutVC.h"
 
 #define LZZHistoryListCellHeight 30.0
 
@@ -78,7 +80,7 @@
     [self.view addSubview:self.textField];
     
     // label
-    [self.view addSubview:self.titleLabel];
+    [self.navigationController.view addSubview:self.titleLabel];
     [self.view addSubview:self.copyrightLabel];
     
     // button
@@ -96,12 +98,12 @@
 
     [UIView animateWithDuration:1.0 delay:0.5 usingSpringWithDamping:0.8 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.textField.layer.opacity = 1.0;
-        self.titleLabel.transform = CGAffineTransformScale(CGAffineTransformMakeTranslation(0, -SCREEN_WIDTH*0.38), 0.5, 0.5);
+        self.titleLabel.transform = CGAffineTransformScale(CGAffineTransformMakeTranslation(0, -SCREEN_WIDTH*0.48), 0.51, 0.51);
         self.textField.frame = CGRectMake(SCREEN_WIDTH*0.05, kScreen_Height*0.2, SCREEN_WIDTH*0.9, 45);
         self.commitBtn.frame = CGRectMake(SCREEN_WIDTH*0.2, kScreen_Height*0.5, SCREEN_WIDTH*0.6,50);
     } completion:^(BOOL finished) {
-
-        
+        [self.titleLabel removeFromSuperview];
+        self.navigationItem.title = self.titleLabel.text;
     }];
 }
 
@@ -158,18 +160,23 @@
     switch (state) {
         case kPKDownloadButtonState_StartDownload:
         {
+            self.textField.text = [self.textField.text smartUrl];
             [StoreData insertUrl:self.textField.text];
             self.commitBtn.state = kPKDownloadButtonState_Pending;
-            [LZZCrawlerTool grabHTMLWithUrl:self.textField.text withParams:nil andXPath:@"//img[@src]" andCompletion:^(BOOL successed, id resData, NSError *error) {
-                SCLAlertView * alert = [[SCLAlertView alloc] initWithNewWindow];
+            [LZZCrawlerTool getHTMLDocumentWithUrl:self.textField.text andParams:nil andCompletion:^(BOOL successed, id responseObject, NSError *error) {
+                
                 self.commitBtn.state = kPKDownloadButtonState_StartDownload;
                 if (successed) {
-                    [alert showSuccess:@"Successed" subTitle:@"Grab done" closeButtonTitle:@"done" duration:LZZAlertStayDuration];
-                    NSLog(@"resData:%@",[FormatToString formatItem:resData]);
+                    CheckoutVC * vc = [[CheckoutVC alloc] initWithNibName:NSStringFromClass([CheckoutVC class]) bundle:nil];
+                    vc.htmlDocument = responseObject;
+                    [self.navigationController pushViewController:vc animated:YES];
+                    NSLog(@"resData:%@",[FormatToString formatItem:responseObject]);
                 }else{
-                    [alert showError:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"close" duration:LZZAlertStayDuration];
+                    SCLAlertView * alert = [[SCLAlertView alloc] initWithNewWindow];
+                    [alert showError:@"Oops~" subTitle:error.localizedDescription closeButtonTitle:@"close" duration:LZZAlertStayDuration];
                 }
             }];
+
         }
             break;
         case kPKDownloadButtonState_Pending:
@@ -201,10 +208,10 @@
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    static NSString * const kCellID = @"historyCell";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:kCellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellID];
         cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = [UIColor grayColor];
