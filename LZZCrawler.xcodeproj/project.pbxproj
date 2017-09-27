@@ -24,6 +24,8 @@
 		611955DF1F7B97A200CE245E /* HZPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 611955D81F7B97A200CE245E /* HZPhotoItem.m */; };
 		611955E01F7B97A200CE245E /* HZWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 611955DA1F7B97A200CE245E /* HZWaitingView.m */; };
 		611955E11F7B97A200CE245E /* whiteplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 611955DB1F7B97A200CE245E /* whiteplaceholder.png */; };
+		611955E61F7BB1A600CE245E /* CheckoutWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 611955E41F7BB1A600CE245E /* CheckoutWebViewVC.m */; };
+		611955E71F7BB1A600CE245E /* CheckoutWebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 611955E51F7BB1A600CE245E /* CheckoutWebViewVC.xib */; };
 		61A672451F79ECFB0020F6A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A672441F79ECFB0020F6A4 /* AppDelegate.m */; };
 		61A672481F79ECFB0020F6A4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A672471F79ECFB0020F6A4 /* ViewController.m */; };
 		61A6724D1F79ECFB0020F6A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A6724C1F79ECFB0020F6A4 /* Assets.xcassets */; };
@@ -69,6 +71,9 @@
 		611955DA1F7B97A200CE245E /* HZWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWaitingView.m; sourceTree = "<group>"; };
 		611955DB1F7B97A200CE245E /* whiteplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteplaceholder.png; sourceTree = "<group>"; };
 		611955E21F7B97DC00CE245E /* HZPhotoBrowserHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserHeader.h; sourceTree = "<group>"; };
+		611955E31F7BB1A600CE245E /* CheckoutWebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutWebViewVC.h; sourceTree = "<group>"; };
+		611955E41F7BB1A600CE245E /* CheckoutWebViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutWebViewVC.m; sourceTree = "<group>"; };
+		611955E51F7BB1A600CE245E /* CheckoutWebViewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutWebViewVC.xib; sourceTree = "<group>"; };
 		61A672401F79ECFB0020F6A4 /* LZZCrawler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZZCrawler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A672431F79ECFB0020F6A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		61A672441F79ECFB0020F6A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,6 +122,9 @@
 				611955C91F7B965600CE245E /* CheckoutPicVC.h */,
 				611955CA1F7B965600CE245E /* CheckoutPicVC.m */,
 				611955CB1F7B965600CE245E /* CheckoutPicVC.xib */,
+				611955E31F7BB1A600CE245E /* CheckoutWebViewVC.h */,
+				611955E41F7BB1A600CE245E /* CheckoutWebViewVC.m */,
+				611955E51F7BB1A600CE245E /* CheckoutWebViewVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61A6725D1F79F0560020F6A4 /* bgimg.jpg in Resources */,
+				611955E71F7BB1A600CE245E /* CheckoutWebViewVC.xib in Resources */,
 				611955E11F7B97A200CE245E /* whiteplaceholder.png in Resources */,
 				611955A41F79F9A300CE245E /* LaunchScreen.storyboard in Resources */,
 				611955C51F7B86AA00CE245E /* CheckoutVC.xib in Resources */,
@@ -387,6 +396,7 @@
 				611955CC1F7B965600CE245E /* CheckoutPicVC.m in Sources */,
 				611955B71F7A641E00CE245E /* FormatToString.m in Sources */,
 				611955DE1F7B97A200CE245E /* HZPhotoGroup.m in Sources */,
+				611955E61F7BB1A600CE245E /* CheckoutWebViewVC.m in Sources */,
 				611955DD1F7B97A200CE245E /* HZPhotoBrowserView.m in Sources */,
 				61A672451F79ECFB0020F6A4 /* AppDelegate.m in Sources */,
 				611955E01F7B97A200CE245E /* HZWaitingView.m in Sources */,

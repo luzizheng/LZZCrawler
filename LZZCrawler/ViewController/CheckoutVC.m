@@ -9,6 +9,7 @@
 #import "CheckoutVC.h"
 #import "UINavigationItem+CustomBackButton.h"
 #import "CheckoutPicVC.h"
+#import "CheckoutWebViewVC.h"
 
 @interface CheckoutVC ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -73,7 +74,9 @@
             break;
         case 1:
         {
-            
+            CheckoutWebViewVC * vc = [[CheckoutWebViewVC alloc] initWithNibName:NSStringFromClass([CheckoutWebViewVC class]) bundle:nil];
+            vc.htmlDocument = self.htmlDocument;
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
             
@@ -90,7 +93,7 @@
 -(NSArray *)cellData
 {
     if (!_cellData) {
-        _cellData = @[@"Picture",@"Nodes",@"Class"];
+        _cellData = @[@"Pictures",@"Links",@"Class"];
     }
     return _cellData;
 }
